@@ -1,37 +1,36 @@
 package com.epam.topsport.controller;
 
-import com.epam.topsport.model.Car;
-import com.epam.topsport.model.CarMapper;
-import com.epam.topsport.model.Cars;
+import com.epam.topsport.model.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
 
 import java.util.List;
 
 @Controller
 public class DashboardController {
 
-    private Cars cars;
+    private Users users;
 
     @Autowired
-    public DashboardController(Cars cars) {
-        this.cars = cars;
+    public DashboardController(Users users) {
+        this.users = users;
     }
 
-    @GetMapping("/")
-    public String dashboard(Model model) {
-        model.addAttribute("cars", cars.getAllCars());
-        return "dashboard";
-    }
+//    @GetMapping("/")
+//    public String dashboard(Model model) {
+//        model.addAttribute("users", users.getAllUsers());
+//        return "dashboard";
+//    }
 
-    @GetMapping("/two")
+    @RequestMapping(value = {"/", "/home", "/index"})
     public String two(Model model) {
-        List<Car> allCars = cars.getAllCars();
-        allCars.addAll(cars.getAllCars());
-        model.addAttribute("cars", allCars);
+        List<User> allUsers = users.getAllUsers();
+        allUsers.addAll(users.getAllUsers());
+        model.addAttribute("users", allUsers);
         return "dashboard";
     }
 
