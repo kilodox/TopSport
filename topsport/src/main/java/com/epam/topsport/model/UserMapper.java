@@ -2,7 +2,6 @@ package com.epam.topsport.model;
 
 import org.springframework.jdbc.core.RowMapper;
 
-import java.io.File;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 

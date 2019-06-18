@@ -1,7 +1,6 @@
 package com.epam.topsport.model;
 
-import java.sql.Date;
-import java.text.DateFormat;
+import java.util.Date;
 
 public class Comment {
     private int commentId;

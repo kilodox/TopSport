@@ -4,6 +4,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Component;
 
+import java.util.Date;
 import java.util.List;
 import java.util.Map;
 
@@ -16,8 +17,9 @@ public class Comments {
         this.jdbcTemplate = jdbcTemplate;
     }
 
-    public List<Map<String, Object>> sortList() {
-        return jdbcTemplate.queryForList("SELECT aisle DISTINCT text from comments", new CommentMapper());
+    public List<Comment> sortList() {
+        return jdbcTemplate.query("SELECT * from comments", new CommentMapper());
+        //SELECT DISTINCT text from comments ORDER BY TIME
     }
 
 }

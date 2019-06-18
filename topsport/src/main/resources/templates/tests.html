@@ -6,11 +6,12 @@
 </head>
 <body>
 <table>
-    <th:block th:each="user : ${users}">
+    <th:block th:each="comment : ${comments}">
         <tr>
-            <td th:text="${user.nickname}">...</td>
-            <td th:text="${user.password}">...</td>
-            <td th:text="${user.fullName}">...</td>
+            <td th:text="${comment.commentId}">...</td>
+            <td th:text="${comment.text}">...</td>
+            <td th:text="${comment.email}">...</td>
+            <td th:text="${comment.time}">...</td>
         </tr>
     </th:block>
 </table>
