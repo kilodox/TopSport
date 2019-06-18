@@ -16,11 +16,13 @@ public class DashboardController {
 
     private Users users;
     private Comments comments;
+    private Articles articles;
 
     @Autowired
-    public DashboardController(Users users, Comments comments) {
+    public DashboardController(Users users, Comments comments, Articles articles) {
         this.users = users;
         this.comments = comments;
+        this.articles = articles;
     }
 
 //    @GetMapping("/")
@@ -39,7 +41,6 @@ public class DashboardController {
     @RequestMapping(value = "/comments")
     public String comments(Model model) {
         List<Comment> allComments = comments.sortList();
-       // allComments.addAll(comments.sortList());
         model.addAttribute("comments", allComments);
         return "tests";
     }

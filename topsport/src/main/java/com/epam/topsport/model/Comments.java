@@ -18,7 +18,7 @@ public class Comments {
     }
 
     public List<Comment> sortList() {
-        return jdbcTemplate.query("SELECT * from comments", new CommentMapper());
+        return jdbcTemplate.query("SELECT * from comments WHERE comment_id >1 ORDER BY time", new CommentMapper());
         //SELECT DISTINCT text from comments ORDER BY TIME
     }
 
