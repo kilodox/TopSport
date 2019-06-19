@@ -5,9 +5,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.*;
 
+import java.util.Arrays;
 import java.util.Date;
 import java.util.List;
 
@@ -44,5 +44,22 @@ public class DashboardController {
         model.addAttribute("comments", allComments);
         return "tests";
     }
+
+    @RequestMapping("/comments/{id}")
+    public String comment(@PathVariable int id, Model model){
+        List<Comment> commentId = comments.getCommentById(id);
+        model.addAttribute("comments", commentId);
+        return "demo";
+    }
+    @RequestMapping(method = RequestMethod.POST, value = "/comments")
+    public void addComment(@RequestBody Comment comment){
+        comments.addComment(comment);
+    }
+
+//    @RequestMapping("/comments/{id}")
+//    public String comment(Integer id){
+//        Comment commentId = comments.getCommentById(id);
+//        return commentId.toString();
+//    }
 
 }
