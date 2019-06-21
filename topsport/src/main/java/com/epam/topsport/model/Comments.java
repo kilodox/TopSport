@@ -1,5 +1,6 @@
 package com.epam.topsport.model;
 
+import com.epam.topsport.model.repositories.CommentRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Component;
@@ -11,12 +12,16 @@ public class Comments {
     private JdbcTemplate jdbcTemplate;
 
     @Autowired
+    private CommentRepository commentRepository;
+
+    @Autowired
     public Comments(JdbcTemplate jdbcTemplate) {
         this.jdbcTemplate = jdbcTemplate;
     }
 
     public List<Comment> sortList() {
         return jdbcTemplate.query("SELECT * FROM comments WHERE comment_id >0 ORDER BY time", new CommentMapper());
+
     }
 
     public List<Comment> getCommentById(int id){
