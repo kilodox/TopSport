@@ -20,12 +20,12 @@ public class Comments {
     }
 
     public List<Comment> sortList() {
-        return jdbcTemplate.query("SELECT * FROM comments WHERE comment_id >0 ORDER BY time", new CommentMapper());
+        return jdbcTemplate.query("SELECT comments.text FROM articles  INNER JOIN comments ON articles.article_id = comments.article_id WHERE comments.article_id = 1;", new CommentMapper());
 
     }
 
     public List<Comment> getCommentById(int id){
-        return jdbcTemplate.query("SELECT * FROM comments WHERE comment_id='" + id + "' ", new CommentMapper());
+        return jdbcTemplate.query("SELECT * FROM comments WHERE article_id='" + id + "' ", new CommentMapper());
     }
 
     public void addComment(Comment comment) {

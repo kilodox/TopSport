@@ -12,12 +12,14 @@ public class Comment {
     private String text;
     private String email;
     private Date time;
+    private int articleId;
 
-    public Comment(int commentId, String text, String email, Date time) {
+    public Comment(int commentId, String text, String email, Date time, int articleId) {
         this.commentId = commentId;
         this.text = text;
         this.email = email;
         this.time = time;
+        this.articleId = articleId;
     }
 
     public int getCommentId() {
@@ -52,6 +54,13 @@ public class Comment {
         this.time = time;
     }
 
+    public int getArticleId() {
+        return articleId;
+    }
+    public void setArticleId(int articleId) {
+        this.articleId = articleId;
+    }
+
     @Override
     public String toString() {
         return "Comment{" +
@@ -59,6 +68,7 @@ public class Comment {
                 ", text='" + text + '\'' +
                 ", email='" + email + '\'' +
                 ", time=" + time +
+                ", articleId=" + articleId +
                 '}';
     }
 }

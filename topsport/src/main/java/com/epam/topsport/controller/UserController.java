@@ -1,6 +1,9 @@
 package com.epam.topsport.controller;
 
+import com.epam.topsport.model.Article;
+import com.epam.topsport.model.Comment;
 import com.epam.topsport.model.User;
+import com.epam.topsport.service.ArticleServiceImplementation;
 import com.epam.topsport.service.UserServiceImplementation;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -15,6 +18,8 @@ public class UserController {
 
     @Autowired
     private UserServiceImplementation userService;
+    @Autowired
+    private ArticleServiceImplementation articleService;
 
     @GetMapping("/list")
     public String getAllUsers(Model model){

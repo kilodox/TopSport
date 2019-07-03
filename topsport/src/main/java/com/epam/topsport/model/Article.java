@@ -2,15 +2,27 @@ package com.epam.topsport.model;
 
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import java.util.List;
 
 @Entity
 public class Article {
 
     @Id
     private int articleId;
+    private String authorFullName;
     private String title;
     private String text;
     private int likes;
+    private int dislikes;
+
+    public Article(int articleId, String authorFullName, String title, String text, int likes, int dislikes) {
+        this.articleId = articleId;
+        this.authorFullName = authorFullName;
+        this.title = title;
+        this.text = text;
+        this.likes = likes;
+        this.dislikes = dislikes;
+    }
 
     public int getArticleId() {
         return articleId;
@@ -18,6 +30,14 @@ public class Article {
 
     public void setArticleId(int articleId) {
         this.articleId = articleId;
+    }
+
+    public String getAuthorFullName() {
+        return authorFullName;
+    }
+
+    public void setAuthorFullName(String authorFullName) {
+        this.authorFullName = authorFullName;
     }
 
     public String getTitle() {
@@ -52,36 +72,15 @@ public class Article {
         this.dislikes = dislikes;
     }
 
-    public int getCommentId() {
-        return commentId;
-    }
-
-    public void setCommentId(int commentId) {
-        this.commentId = commentId;
-    }
-
-    private int dislikes;
-    private int commentId;
-
-    public Article(int articleId, String title, String text, int likes, int dislikes, int commentId) {
-        this.articleId = articleId;
-        this.title = title;
-        this.text = text;
-        this.likes = likes;
-        this.dislikes = dislikes;
-        this.commentId = commentId;
-    }
-
-
-
     @Override
     public String toString() {
         return "Article{" +
-                "title='" + title + '\'' +
+                "articleId=" + articleId +
+                ", authorFullName='" + authorFullName + '\'' +
+                ", title='" + title + '\'' +
                 ", text='" + text + '\'' +
                 ", likes=" + likes +
                 ", dislikes=" + dislikes +
-                ", commentId=" + commentId +
                 '}';
     }
 }

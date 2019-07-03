@@ -14,4 +14,8 @@ public class Articles {
     public Articles(JdbcTemplate jdbcTemplate) {
         this.jdbcTemplate = jdbcTemplate;
     }
+
+    public List<Article> showArticle(int id) {
+        return jdbcTemplate.query("SELECT * FROM public.articles WHERE articles.article_id ='" + id + "' ", new ArticleMapper());
+    }
 }

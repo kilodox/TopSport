@@ -1,0 +1,40 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Getting Started: Serving Web Content</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+<body>
+<table>
+    <div class="container" th:each="artic : ${article}">
+        <h2 th:text="${artic.title}"></h2>
+        <h5 th:text="${artic.authorFullName}">...</h5>
+        <i3 th:text="${artic.text}">...</i3>
+        <form method="get">
+
+        </form>
+        <b th:text="${artic.likes}">...</b>
+        <form method="get">
+            <button type="submit">Like</button>
+        </form>
+        <form method="get">
+
+        </form>
+        <b th:text="${artic.dislikes}">...</b>
+
+            <form method="get">
+                <button type="submit">Dislike</button>
+            </form>
+    </div>
+    <div>
+        <b>Comments</b>
+    <th:block th:each="comment : ${comments}">
+        
+        <tr>
+            <td th:text="${comment.text}">...</td>
+        </tr>
+    </th:block>
+    </div>
+</table>
+</body>
+</html>

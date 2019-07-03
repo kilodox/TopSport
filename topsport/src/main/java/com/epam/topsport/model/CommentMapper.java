@@ -13,7 +13,8 @@ public class CommentMapper implements RowMapper<Comment> {
         String text = resultSet.getString("text");
         String email = resultSet.getString("email");
         Date time = resultSet.getTimestamp("time");
+        int articleId = resultSet.getInt("article_id");
 
-        return new Comment(commentId, text, email, time);
+        return new Comment(commentId, text, email, time, articleId);
     }
 }
