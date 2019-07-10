@@ -1,7 +1,7 @@
-package com.epam.topsport.dao;
+package com.epam.topsport.model.dao;
 
-import com.epam.topsport.model.User;
-import com.epam.topsport.model.UserMapper;
+import com.epam.topsport.model.pojos.User;
+import com.epam.topsport.model.mappers.UserMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.BeanPropertyRowMapper;
 import org.springframework.jdbc.core.JdbcTemplate;

@@ -1,5 +1,7 @@
-package com.epam.topsport.model;
+package com.epam.topsport.model.dao;
 
+import com.epam.topsport.model.mappers.CommentMapper;
+import com.epam.topsport.model.pojos.Comment;
 import com.epam.topsport.model.repositories.CommentRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
@@ -8,14 +10,14 @@ import org.springframework.stereotype.Component;
 import java.util.List;
 
 @Component
-public class Comments {
+public class CommentDaoImplementation implements CommentDao{
     private JdbcTemplate jdbcTemplate;
 
     @Autowired
     private CommentRepository commentRepository;
 
     @Autowired
-    public Comments(JdbcTemplate jdbcTemplate) {
+    public CommentDaoImplementation(JdbcTemplate jdbcTemplate) {
         this.jdbcTemplate = jdbcTemplate;
     }
 

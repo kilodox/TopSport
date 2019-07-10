@@ -1,5 +1,6 @@
-package com.epam.topsport.model;
+package com.epam.topsport.model.mappers;
 
+import com.epam.topsport.model.pojos.Comment;
 import org.springframework.jdbc.core.RowMapper;
 
 import java.util.Date;

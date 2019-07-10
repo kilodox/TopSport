@@ -28,8 +28,8 @@
     </div>
     <div>
         <b>Comments</b>
-    <th:block th:each="comment : ${comments}">
-        
+    <th:block th:each="comment : ${commentDaoImplementation}">
+
         <tr>
             <td th:text="${comment.text}">...</td>
         </tr>

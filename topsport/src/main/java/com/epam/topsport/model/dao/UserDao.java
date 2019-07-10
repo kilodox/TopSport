@@ -1,10 +1,11 @@
-package com.epam.topsport.service;
+package com.epam.topsport.model.dao;
 
-import com.epam.topsport.model.User;
+import com.epam.topsport.model.pojos.User;
 
 import java.util.List;
 
-public interface UserService {
+public interface UserDao {
+
     List<User> getAllUsers();
 
     User findUserByEmail(String email);

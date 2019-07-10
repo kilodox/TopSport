@@ -1,4 +1,4 @@
-package com.epam.topsport.model;
+package com.epam.topsport.model.pojos;
 
 import javax.persistence.Entity;
 import javax.persistence.Id;

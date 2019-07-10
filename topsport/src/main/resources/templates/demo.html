@@ -6,7 +6,7 @@
 </head>
 <body>
 <table>
-    <th:block th:each="comment : ${comments}">
+    <th:block th:each="comment : ${commentDaoImplementation}">
         <tr>
             <td th:text="${comment.commentId}">...</td>
             <td th:text="${comment.text}">...</td>

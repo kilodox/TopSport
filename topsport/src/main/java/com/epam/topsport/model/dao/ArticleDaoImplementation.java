@@ -1,5 +1,7 @@
-package com.epam.topsport.model;
+package com.epam.topsport.model.dao;
 
+import com.epam.topsport.model.mappers.ArticleMapper;
+import com.epam.topsport.model.pojos.Article;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Component;
@@ -7,11 +9,11 @@ import org.springframework.stereotype.Component;
 import java.util.List;
 
 @Component
-public class Articles {
+public class ArticleDaoImplementation implements ArticleDao {
     private JdbcTemplate jdbcTemplate;
 
     @Autowired
-    public Articles(JdbcTemplate jdbcTemplate) {
+    public ArticleDaoImplementation(JdbcTemplate jdbcTemplate) {
         this.jdbcTemplate = jdbcTemplate;
     }
 
