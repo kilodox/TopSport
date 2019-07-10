@@ -58,7 +58,7 @@ public class DashboardController {
 
     @RequestMapping
     public String logging(){
-
+        return "login";
     }
 
 }
